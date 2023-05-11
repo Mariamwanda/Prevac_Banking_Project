@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: bisque;
+}
+
+.container{
+    border: 1px solid black;
+    height: 35vh;
+}
+
+.container-text{
+    border: 1px solid black;
+    padding-top: 15px;
+}
