@@ -1,6 +1,7 @@
 /**********************$************************************* DEBUT HEADER ****************************************************/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 :root{
   --primaryColor : #1521CF;
   --secondaryColor : #0B1035;
@@ -9,6 +10,11 @@
   --primaryColor: #19376d;
   --secondaryColor: #a5d7e8;
 >>>>>>> 692b2f3 (demo)
+=======
+:root{
+  --primaryColor : #1521CF;
+  --secondaryColor : #0B1035;
+>>>>>>> 82e264f (lundi)
 }
 
 body {

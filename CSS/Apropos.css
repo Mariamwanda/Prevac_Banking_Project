@@ -5,12 +5,18 @@
 }
 
 .center{
+<<<<<<< HEAD
    background-color: rgba(128, 128, 128, 0.057);
     height: 55vh;
+=======
+    background-color: aqua;
+    height: 50vh;
+>>>>>>> 82e264f (lundi)
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
+<<<<<<< HEAD
    
 }
 .premierImg{
@@ -128,3 +134,39 @@
    margin-left: 10vh;
    font-size: 15px;
 }
+=======
+}
+.premierImg{
+    border: 1px solid black;
+    height: 25vh;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deuxiemImg{
+    border: 1px solid blue;
+    height: 25vh;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center .ligne1{
+    border: 1px solid black;
+    width: 50%;
+}
+
+.center .text{
+    border: 1px solid blue;
+    width: 50%;
+}
+
+.ligne1 button{
+    width: 15%;
+    height: 60px;
+    border: none;
+    background-color:#19376D ;
+    color: #ffffff;
+}
+>>>>>>> 82e264f (lundi)
