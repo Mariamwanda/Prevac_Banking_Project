@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center{
+    background-color: aqua;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.premierImg{
+    border: 1px solid black;
+    height: 25vh;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deuxiemImg{
+    border: 1px solid blue;
+    height: 25vh;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center .ligne1{
+    border: 1px solid black;
+    width: 50%;
+}
+
+.center .text{
+    border: 1px solid blue;
+    width: 50%;
+}
+
+.ligne1 button{
+    width: 15%;
+    height: 60px;
+    border: none;
+    background-color:#19376D ;
+    color: #ffffff;
+}
