@@ -1,17 +1,16 @@
 /**********************$************************************* DEBUT HEADER ****************************************************/
 
 :root{
-  --primaryColor : #19376D;
-  --secondaryColor : #A5D7E8;
+  --primaryColor : #1521CF;
+  --secondaryColor : #0B1035;
 }
 
 body {
   font-family: "Poppins";
   background-color: #fff;
-  height: 200vh;
   position: relative;
 }
-/* body:before {
+body:before {
   content: "";
   position: absolute;
   top: 0;
@@ -25,7 +24,7 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 1;
-} */
+}
 body.offcanvas-menu:before {
   opacity: 1;
   z-index: 1002;
@@ -570,3 +569,18 @@ body.offcanvas-menu:before {
 }
 
 /**********************$************************************* FIN HEADER ****************************************************/
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin: 20px 0;
+  padding: 10px;
+  width: 100%;
+  min-height: 250px;
+  border: 2px #ccc solid;
+  color:  black;
+  flex-direction: column;
+  border-radius: 1rem;
+}
