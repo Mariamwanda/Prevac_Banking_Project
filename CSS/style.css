@@ -42,13 +42,13 @@ body.offcanvas-menu:before {
   font-family: "Poppins"
 }
 
-a{
+.site-navbar-wrap a{
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-a,
-a:hover {
+.site-navbar-wrap a,
+.site-navbar-wrap a:hover {
   text-decoration: none !important;
 }
 .div-img{
