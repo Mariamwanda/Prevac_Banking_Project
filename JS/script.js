@@ -1,13 +1,19 @@
-
 $(document).ready(function() {
-  $("#news-slider").owlCarousel({
-      items : 3,
-      itemsDesktop:[1199,3],
-      itemsDesktopSmall:[980,2],
-      itemsMobile : [600,1],
-      navigation:true,
-      navigationText:["",""],
-      pagination:true,
-      autoPlay:true
+
+  $(".owl-carousel").owlCarousel({
+  
+  autoPlay: 3000,
+  items : 4,
+  itemsDesktop : [1199,3],
+  itemsDesktopSmall : [979,3],
+  center: true,
+  nav:true,
+  loop:true,
+  responsive: {
+  600: {
+  items: 4
+  }
+  }
   });
-});
+  
+  });
