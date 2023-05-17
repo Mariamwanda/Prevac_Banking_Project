@@ -47,10 +47,14 @@ body.offcanvas-menu:before {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .site-navbar-wrap a{
 =======
 a {
 >>>>>>> 692b2f3 (demo)
+=======
+.site-navbar-wrap a{
+>>>>>>> b6562b1 (mercredi)
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
