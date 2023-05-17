@@ -5,27 +5,28 @@
 }
 
 .center{
-<<<<<<< HEAD
+
+
+
    background-color: rgba(128, 128, 128, 0.057);
     height: 55vh;
-=======
     background-color: aqua;
-<<<<<<< HEAD
+
     height: 50vh;
->>>>>>> 82e264f (lundi)
-=======
+
+
     height: 55vh;
->>>>>>> 61c1abf (demo)
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
    
 }
 .premierImg{
    
+
     height: 30vh;
     width: 40%;
     display: flex;
@@ -139,11 +140,9 @@
    margin-left: 10vh;
    font-size: 15px;
 }
-=======
-=======
+
+
    
->>>>>>> 61c1abf (demo)
-}
 .premierImg{
     border: 1px solid black;
     height: 30vh;
@@ -160,7 +159,6 @@
 }
 
 .deuxiemImg{
-    border: 1px solid blue;
     height: 30vh;
     width: 40%;
     display: flex;
@@ -174,7 +172,7 @@
 }
 
 .center .ligne1{
-    border: 1px solid black;
+  
     width: 50%;
     position: relative;
     left: 20vh;
@@ -184,25 +182,46 @@
     width: 50%;
 }
 
+.text a{
+    font-size: 25px;
+    color: #19376D;
+    margin: 50px;
+}
+.text p{
+    font-size: 20px;
+}
+
 .ligne1 a{
     width: 100%;
     height: 60px;
     border: none;
+
     background-color:#19376D ;
     color: #ffffff;
-<<<<<<< HEAD
+
 }
->>>>>>> 82e264f (lundi)
-=======
+    /* background-color:#19376D;
     padding: 10px;
-}
+    color: white;
+} */
 
 
 .partie1 a{
     position: relative;
     right: 90px;
+   
 }
 
+.slide h2{
+    text-align: center;
+    margin-top: 25px;
+    color: #19376D;
+}
+
+.item{
+    display: flex;
+    flex-direction: row !important;
+}
 
 
 #team{
@@ -294,4 +313,43 @@
       }
     
  }
->>>>>>> 61c1abf (demo)
+.item 
+
+.col img{
+   height: 8vh;
+    border-radius: 100%;
+}
+
+.col span{
+    color: #19376D;
+    font-size: 20px;
+}
+
+.item .col{
+    border: 2px solid grey;
+    width: 32%;
+    height: 20vh;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 20px;
+   
+}
+
+.prev{
+    position: relative;
+    right: 30px;
+    font-size: 30px;
+    top: 14vh;
+}
+.next{
+    position: relative;
+    left: 100%;
+    font-size: 30px;
+    bottom: 10vh;
+    margin: 20px;
+}
+
+.col h4{
+   margin-left: 10vh;
+   font-size: 15px;
+}
