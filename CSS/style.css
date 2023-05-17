@@ -1,20 +1,9 @@
 /**********************$************************************* DEBUT HEADER ****************************************************/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 :root{
   --primaryColor : #1521CF;
   --secondaryColor : #0B1035;
-=======
-:root {
-  --primaryColor: #19376d;
-  --secondaryColor: #a5d7e8;
->>>>>>> 692b2f3 (demo)
-=======
-:root{
-  --primaryColor : #1521CF;
-  --secondaryColor : #0B1035;
->>>>>>> 82e264f (lundi)
 }
 
 body {
@@ -52,15 +41,8 @@ body.offcanvas-menu:before {
   font-family: "Poppins";
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 .site-navbar-wrap a{
-=======
-a {
->>>>>>> 692b2f3 (demo)
-=======
-.site-navbar-wrap a{
->>>>>>> b6562b1 (mercredi)
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
