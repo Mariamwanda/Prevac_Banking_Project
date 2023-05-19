@@ -1,117 +1,159 @@
+/* 
 
-.center{
-
-
-   background-color: rgba(128, 128, 128, 0.057);
-    height: 55vh;
-    background-color: aqua;
-    height: 50vh;
-    height: 55vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-
-}
-.premierImg{
-    height: 30vh;
-    width: 40%;
-    display: flex;
-   margin-left: 10vh;
-   font-size: 15px;
-}
-
-.premierImg{
-    border: 1px solid black;
-    height: 30vh;
-    width: 40%;
-    background: url(./../IMAGES/rdne.jpeg);
-    background-size: cover;
-}
-
-.deuxiemImg{
-    border: 1px solid blue;
-    height: 30vh;
-    width: 40%;
-    display: flex;
-    background: url(./../IMAGES/rdne.jpeg);
-    background-size: cover;
-}
-
-.center .ligne1{
-    border: 1px solid black;
-
-    width: 50%;
-    position: relative;
-    left: 20vh;
-    width: 50%;
-}
-
-.text a{
+.partieDroite a{
     font-size: 25px;
     color: #19376D;
     margin: 50px;
 }
-.text p{
+.partieDroite p{
     font-size: 20px;
 }
 
-.ligne1 a{
+.racine{
+    background-color: rgba(198, 197, 197, 0.248);
+    display: flex;
+    height:auto;
+    margin-top: 20px;
+}
+
+.partieGauche{
     width: 100%;
-    height: 60px;
-    border: none;
-    background-color:#19376D ;
+    position: relative;
+}
+
+.partieDroite{
+    width: 50%;
+}
+
+.partieGauche .ligne1{
+   width: 100%;
+   height: 50%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.partieGauche .ligne2{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    display: flex;
+ }
+
+ .ligne1 .monImg{
+    width: 50%;
+    height: 25vh;
+    background-size: cover;
+ }
+
+ .ligne2 .monImg{
+    width: 50%;
+    height: 25vh;
+    margin-top: 10vh;
+    background-size: cover;
+ }
+
+ .monImg img{
+    width: 100%;
+    height: 100%;
+ }
+
+ .ligne2 img{
+    margin-left: 20%;
+ }
+
+ .ligne1 .monBut .btn{
+    background-color: #19376D;
     color: #ffffff;
-    padding: 10px;
+ }
+
+ .ligne2 .monBut .btn{
+    background-color: #19376D;
+    color: #ffffff;
+ } */
+
+ .racine{
+    display: flex;
+ }
+
+.partieGauche{
+    background-color: aqua;
+    width: 50%;
 }
+
+.partieGauche .ligne1{
+    border: 2px solid black;
+    background-color: red;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+}
+
+.ligne1 .monBut{
+    background-color: aqua;
+    width: 30%;
+    height: 6vh;
+}
+
+
+.ligne1 .monImg{
+    background-color: orange;
+    width: 30%;
+    height: 6vh;
+}
+
+
+.partieGauche .ligne2{
+    border: 2px solid black;
+    background-color: yellowgreen;
+    width: 100%;
+    height: 10vh;
+}
+
+.partieDroite{
+    background-color: blue;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+@media (max-width: 991.98px) {
+    .padding {
+      padding: 1.5rem;
+    }
+  }
+  @media (max-width: 767.98px) {
    
-.partie1 a{
-    position: relative;
-    right: 90px;
-    color: white;
-
+.partieGauche{
+   left: 0;
+   right: 0;
 }
-
-.slide h2{
-    text-align: center;
-    margin-top: 25px;
-    color: #19376D;
-}
-
-.col img{
-   height: 8vh;
-    border-radius: 100%;
-}
-
-.col span{
-    color: #19376D;
-    font-size: 20px;
-}
-
-.item .col{
-    border: 2px solid grey;
-    width: 32%;
-    height: 20vh;
-    display: inline-block;
-    margin-left: 10px;
-    border-radius: 20px;
-}
-
-.prev{
-    position: relative;
-    right: 30px;
-    font-size: 30px;
-    top: 14vh;
-}
-.next{
-    position: relative;
-    left: 100%;
-    font-size: 30px;
-    bottom: 10vh;
-    margin: 20px;
-}
-
-.col h4{
-   margin-left: 10vh;
-   font-size: 15px;
-}
+  }
+  .padding {
+    padding: 3rem;
+  }
+  .owl-carousel .item {
+    margin: 3px;
+  }
+  .owl-carousel .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .owl-carousel .item {
+    margin: 3px;
+  }
+  .owl-carousel {
+    margin-bottom: 15px;
+  }
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: pink;
+  }
+  
