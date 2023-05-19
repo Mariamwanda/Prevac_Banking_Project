@@ -38,24 +38,18 @@
     background-color: rgb(191, 191, 212);
     
  }
- .objet{
-    position: relative;
-    margin-top:50px;
+ .incon{
+    display: flex;
  }
- .objets{
-    width:450px;
-    height:50px;
-    background-color: rgb(191, 191, 212);
+ .localise{
+    flex-direction: column;
+    flex-wrap: wrap;
  }
- .message{
-    position: relative;
-    margin-top: 20px;
+ .mb-3{
+    height:120px;
  }
- .messages{
-    width:450px;
-    height:300px;
-    background-color: rgb(191, 191, 212);
-    text-justify: auto;
+ .form-label{
+    margin:0px;
  }
  .incon{
     display: flex;

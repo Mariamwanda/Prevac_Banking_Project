@@ -152,35 +152,42 @@
 
 
     
-          <label for="mail" class="form-label"> Votre E-mail </label>
+          <label for="mail" class="form-label">  E-mail </label>
           <input type="text" name="mail" id="mail" placeholder="votre mail">
 
         </form>
-        <!-- <div class="nom">
-          <input class="noms" id="noms" type="text" placeholder="Votre Nom">
+        <br>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Objet</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="objet">
         </div>
-        <div class="mail">
-          <input class="mails" id="mails" type="text" placeholder="Votre E-mail">
-        </div>
-        <div class="objet">
-          <input class="objets" id="objets" type="text" placeholder="Objet">
-        </div>
-
-        <div class="message">
-          <input class="messages" id="messages" type="text" placeholder="Votre Message">
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
-      </div> -->
-      
-    </div>
+        <label for="exampleDataList" class="form-label">Votre pays</label>
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+        <datalist id="datalistOptions">
+          <option value="Côte d’Ivoire"> 
+          <option value="Sénégal">
+          <option value="Mali">
+          <option value="Burkina Faso">
+          <option value="Niger">
+          <option value="Bénin">
+          <option value="Guinée Bissau">  
+          <option value="Togo">  
+              
+        </datalist>
+
+        <br>
+        <input type="submit" value="Envoyer" class="btn btn-primary">
+
+     </div>
 
    
 
-    <button class="favorite styled" id="btn"
-    type="button">
-    Envoyer votre message
-   </button>
-
+    
    <div class="incon">
     <div class="localise">
       <i class="fa-solid fa-location-dot"></i>
