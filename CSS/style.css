@@ -617,12 +617,22 @@ a:hover {
 
 /* Slider  */
 
+#caro-flex{
+  gap: 5px;
+}
+
+.back-filter::before{
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
+/* .apropos-value{
+    bottom: 5%;
+} */
+/* 
 .stretch-card > .card {
   width: 100%;
   min-width: 100%;
-}
-body {
-  background-color: #f9f9fa;
 }
 .flex {
   -webkit-box-flex: 1;
@@ -661,4 +671,4 @@ body {
   bottom: 8px;
   left: 16px;
   color: pink;
-}
+} */
