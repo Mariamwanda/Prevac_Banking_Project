@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #A5D7E8;
+}
+
+h3{
+    text-align: center;
+    color: #19376D;
+}
+
+h2{
+    color: #79a7d3;
+}
+.container{
+    margin-top: 80px;
+    background-color: #ffffff;
+    padding: 100px;
+    border-radius: 20px/50px;
+}
+
+label{
+    color: #19376D;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.btn{
+    background-color: #19376D;
+    width: 20%;
+    height: 50px;
+    color: #ffffff;
+    margin-top: 40px;
+    float: left;
+    position: relative;
+    left: 38%;
+    font-size: 25px;
+}
+
+.btn i{
+    color: #ffffff;
+}
+
+.col .check{
+   padding-left: 40px;
+}
+.col input{
+    background-color: hsla(0, 4%, 77%, 0.791);
+    border: 1px solid black;
+ }
+ ::placeholder{
+    color: black;
+ }
+
+.check #flot{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.check #flaot{
+    float: right;
+    margin-right: 20px;
+}
+p{
+    text-align: center;
+    font-size: 20px;
+    color: #19376D;
+}
+
+span{
+    color: red;
+}
+.col select{
+    background-color: hsla(0, 4%, 77%, 0.791);
+    border: 1px solid black;
+ }
+
+
+ .container .fa-solid {
+    font-size: 25px;
+ }
+
+ .input-group a{
+    color: #ffffff;
+    text-decoration: none;
+ }
+
+ .input-group{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 100%;
+ }
+
+ .input-group button{
+    width: 25%;
+    height: 50px;
+    font-size: 18px;
+    background-color: #19376D;
+    border: none;
+ }
+
+
+h5{
+    font-size: 100px;
+}

@@ -1,75 +1,3 @@
-/* 
-
-.partieDroite a{
-    font-size: 25px;
-    color: #19376D;
-    margin: 50px;
-}
-.partieDroite p{
-    font-size: 20px;
-}
-
-.racine{
-    background-color: rgba(198, 197, 197, 0.248);
-    display: flex;
-    height:auto;
-    margin-top: 20px;
-}
-
-.partieGauche{
-    width: 100%;
-    position: relative;
-}
-
-.partieDroite{
-    width: 50%;
-}
-
-.partieGauche .ligne1{
-   width: 100%;
-   height: 50%;
-   display: flex;
-   justify-content: space-between;
-}
-
-.partieGauche .ligne2{
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    display: flex;
- }
-
- .ligne1 .monImg{
-    width: 50%;
-    height: 25vh;
-    background-size: cover;
- }
-
- .ligne2 .monImg{
-    width: 50%;
-    height: 25vh;
-    margin-top: 10vh;
-    background-size: cover;
- }
-
- .monImg img{
-    width: 100%;
-    height: 100%;
- }
-
- .ligne2 img{
-    margin-left: 20%;
- }
-
- .ligne1 .monBut .btn{
-    background-color: #19376D;
-    color: #ffffff;
- }
-
- .ligne2 .monBut .btn{
-    background-color: #19376D;
-    color: #ffffff;
- } */
 
  .racine{
   width: 100%;
@@ -152,6 +80,7 @@
 
 .partieDroite a{
   color: #19376D;
+  text-decoration: none;
 }
 
 
