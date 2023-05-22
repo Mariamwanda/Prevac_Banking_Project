@@ -72,88 +72,118 @@
  } */
 
  .racine{
-    display: flex;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  margin-top: 40px;
  }
 
 .partieGauche{
-    background-color: aqua;
     width: 50%;
+    height: 100%;
+    position: relative;
 }
 
 .partieGauche .ligne1{
-    border: 2px solid black;
-    background-color: red;
     width: 100%;
-    height: 10vh;
+    height: 50%;
     display: flex;
 }
 
-.ligne1 .monBut{
-    background-color: aqua;
-    width: 30%;
-    height: 6vh;
-}
-
-
-.ligne1 .monImg{
-    background-color: orange;
-    width: 30%;
-    height: 6vh;
-}
-
-
 .partieGauche .ligne2{
-    border: 2px solid black;
-    background-color: yellowgreen;
-    width: 100%;
-    height: 10vh;
+  display: flex;
+  width: 100%; 
+  height: 50%;
+  position: absolute;
+  bottom: 30px;
 }
 
-.partieDroite{
-    background-color: blue;
-    width: 50%;
+.ligne1 .monBut{
+    width: 30%;
     height: 100%;
 }
 
+.ligne1 .imgL2{
+    width: 70%;
+    height: 100%;
+}
 
+.ligne1 .imgL2 img{
+  width: 100%;
+  height: 100%;
+}
 
+.ligne2 .monBut{
+  width: 30%;
+  height: 100%;
+}
 
+.ligne1 .monBut button{
+  color: white;
+  width: 70%;
+  background-color:  #19376D;
+}
 
+.ligne2 .monBut button{
+  color: white;
+  width: 70%;
+  background-color:  #19376D;
+  margin-top: 10vh;
+  margin-left: 30%;
+}
+
+.ligne2 .monImg{
+  width: 70%;
+  height: 100%;
+}
+
+.ligne2 .monImg img{
+  width: 100%;
+  height: 100%;
+ 
+}
+
+.partieDroite{
+    width: 50%;
+    height: 100%;
+    font-size: 23px;
+    margin-left: 40px;
+}
+
+.partieDroite a{
+  color: #19376D;
+}
 
 
 @media (max-width: 991.98px) {
     .padding {
       padding: 1.5rem;
     }
+
+    .racine{
+      display: inline-block;
+      align-items: center;
+    }
+
+.monBut button{
+  font-size: 10px;
+
+}
   }
   @media (max-width: 767.98px) {
    
-.partieGauche{
-   left: 0;
-   right: 0;
+    .partieGauche{
+      left: 0;
+      right: 0;
+    }
+
+.partieDroite{
+  font-size: 15px;
+ 
 }
-  }
-  .padding {
-    padding: 3rem;
-  }
-  .owl-carousel .item {
-    margin: 3px;
-  }
-  .owl-carousel .item img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .owl-carousel .item {
-    margin: 3px;
-  }
-  .owl-carousel {
-    margin-bottom: 15px;
-  }
-  .bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    color: pink;
-  }
+
+    }
+
+
+
   
