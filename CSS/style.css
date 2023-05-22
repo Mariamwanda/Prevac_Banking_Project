@@ -664,3 +664,16 @@ body {
   left: 16px;
   color: pink;
 }
+
+
+/* SLider */
+
+#caro-flex{
+  gap: 5px;
+}
+
+.back-filter::before{
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
