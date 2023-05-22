@@ -97,6 +97,18 @@ h1{
   margin: 15px;
 }
 
+.MonLog{
+  width: 20%;
+  height: 120px;
+  position: absolute;
+  margin-left: 30vh;
+}
+
+.MonLog img{
+  width: 40%;
+  height: 60vh;
+}
+
 @media (max-width: 991.98px) {
     .padding {
       padding: 1.5rem;

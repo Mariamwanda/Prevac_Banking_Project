@@ -54,7 +54,7 @@ body.offcanvas-menu:before {
 .div-img {
   width: 100px;
   height: 100px;
-}
+} 
 .hero {
   height: 100vh;
   width: 100%;
@@ -511,6 +511,7 @@ body.offcanvas-menu:before {
 }
 .sticky-wrapper.is-sticky .site-navbar {
   background-color: #19376D;
+  opacity: 0.6;
 }
 .sticky-wrapper.is-sticky .site-navbar .site-navigation .site-menu > li {
   display: inline-block;
