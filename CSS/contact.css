@@ -102,3 +102,22 @@
 .maps{
     width: 100%;
 }
+
+@media screen and (max-width: 800px) {
+    .contact{
+        margin: 1em 2em;
+    }
+    .form{
+        font-size: 3rem;
+    }
+    .datalistOptions{
+        font-size: 3rem;
+    }
+    
+}
+@media screen  and (min-width: 600px) {
+    .incon {
+        margin: .1rem;
+    }
+    
+}
