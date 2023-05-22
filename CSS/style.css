@@ -689,23 +689,3 @@ a:hover {
 
 
 
-
-<!------------------------------------     Users demo --------------------- >
- .nav-link, .nav-link:hover{
-    color:white; text-decoration: none;
-  }
-.date1{
-    width: 14%;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #D5D4DF;
-}
-.w-25{
-    border: 1px solid #D5D4DF;
-    background-color: #D5D4DF;
-    margin: 0 10px;
-}
-<!------------------------------------ Users demo -------------------------->
