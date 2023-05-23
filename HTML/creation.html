@@ -1,25 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compte</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/CSS/creation.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./../fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="./../css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./../CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./../CSS/creation.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="text container">
+        <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <h3>CREATION DE COMPTE</h3>
+        <form>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="nom">Nom</label>
+                        </div>
+                        <input type="text" class="form-control" id="nom" aria-describedby="nom">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="prenom">Prénom(s)</label>
+                        </div>
+                        <input type="text" class="form-control" id="prenom" aria-describedby="prenom">
+                    </div>
+                </div>
+            </div>
 
-        </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="email">Email</label>
+                        </div>
+                        <input type="email" class="form-control" id="email" aria-describedby="email">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="telephone">Téléphone</label>
+                        </div>
+                        <input type="tel" class="form-control" id="telephone" aria-describedby="telephone">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="password">Code sécret</label>
+                        </div>
+                        <input type="password" class="form-control" id="password" aria-describedby="password">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="secret">Répéter code sécret</label>
+                        </div>
+                        <input type="password" class="form-control" id="secret" aria-describedby="secret">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Email <span>*</span></label>
+                    <input type="email" class="form-control" placeholder="Nom">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="">Nom <span>*</span></label>
+                    <input type="text" class="form-control" placeholder="Nom">
+                </div>
+                <div class="col">
+                    <label for="">Prenom <span>*</span></label>
+                    <input type="text" class="form-control" placeholder="Prénom">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="">Contacts <span>*</span></label>
+                    <input type="number" class="form-control" placeholder="Nom">
+                </div>
+                <div class="col">
+                    <label for="selection">Pays <span>*</span></label>
+                    <select id="selection" class="form-control">
+                        <option value="">pays d'origine</option>
+                        <option value="">Cote d'Ivoire</option>
+                        <option value="">Burkina/Faso</option>
+                        <option value="">France</option>
+                        <option value="">Gabon</option>
+                        <option value="">Togo</option>
+                        <option value="">Mali</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="selection">Ville/Commune <span>*</span></label>
+                    <select id="selection" class="form-control">
+                        <option value="">Abidjan / Koumassi</option>
+                        <option value="">Ouagadougou / Tenkodogo</option>
+                        <option value="">Paris / Morangis</option>
+                        <option value="">Libreville / Kumassi</option>
+                        <option value="">Lomé / Badou</option>
+                        <option value="">Bamako / Sikasso</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <div class="check">
+                        <label for="">Genre <span>*</span></label> <br>
+                        <input type="radio" name="Feminin">
+                        <label for="">Feminin</label>
+                        <label for="" id="flaot">Masculin</label>
+                        <input type="radio" name="Feminin" id="flot">
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <button class="btn btn" type="button" id="bouton-texte"><a href="./../HTML/info_supple.html">Suivant<i class="fa-solid fa-arrow-right"></i></a></button>
+            </div>
+        </form>
+        <p>J’ai deja un compte ? Connexion</p>
+        <p>Nb: Veuillez a rempli tout les champs en <span>*</span> <br> pour plus de Securité. Merci!!!</p>
     </div>
-    
 
-
-
-
-    <script src="/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="./../JS/jquery-3.3.1.min.js"></script>
+    <script src="./../JS/popper.min.js"></script>
+    <script src="./../JS/bootstrap.min.js"></script>
+    <script src="./../JS/jquery.sticky.js"></script>
+    <script src="./../JS/main.js"></script>
 </body>
+
 </html>

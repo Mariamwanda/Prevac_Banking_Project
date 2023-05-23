@@ -3,8 +3,8 @@
 :root {
   --primaryColor: #19376d;
   --secondaryColor: #a5d7e8;
-}
 
+}
 body {
   font-family: "Poppins";
   background-color: #fff;
@@ -40,13 +40,14 @@ body.offcanvas-menu:before {
   font-family: "Poppins";
 }
 
-a {
+
+.site-navbar-wrap a{
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-a,
-a:hover {
+.site-navbar-wrap a,
+.site-navbar-wrap a:hover {
   text-decoration: none !important;
 }
 .div-img {
@@ -508,7 +509,7 @@ a:hover {
   color: #fff;
 }
 .sticky-wrapper.is-sticky .site-navbar {
-  background-color: #007bff;
+  background-color: #19376D;
 }
 .sticky-wrapper.is-sticky .site-navbar .site-navigation .site-menu > li {
   display: inline-block;
