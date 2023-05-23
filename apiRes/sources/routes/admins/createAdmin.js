@@ -3,12 +3,13 @@ let auth = require('../../auth/auth');
 // let http = require("http");
 let { ValidationError, UniqueConstraintError } = require('sequelize');
 
-let caract = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-function genererChaineAleatoire(caracteres, longueur){
-    let longueurMax = caracteres.length;
+
+function genererChaineAleatoire(){
+  const caract = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let longueurMax = caract.length;
     let chaineAleatoire = '';
-    for (let i = 0; i < longueur; i++){
-        chaineAleatoire += caracteres[Math.floor(Math.random()*longueurMax)];
+    for (let i = 0; i < 25; i++){
+        chaineAleatoire += caract[Math.floor(Math.random()*longueurMax)];
     }
     return chaineAleatoire;
 }
@@ -16,7 +17,7 @@ function genererChaineAleatoire(caracteres, longueur){
 module.exports = (app) => {
   app.post('/api/admins', /*auth,*/ (request, response) => {
     console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++',request.params)
-    request.body.reference = `IBANK-${genererChaineAleatoire(caract, 25).toUpperCase()}`;
+    request.body.reference = `IBANK-${genererChaineAleatoire().toUpperCase()}`;
     request.body.statut = 1;
     request.body.nom = request.params.nom; 
     request.body.prenom = request.params.prenom;

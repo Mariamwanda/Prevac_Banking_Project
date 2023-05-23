@@ -14,18 +14,18 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(20), 
             allowNull: false,
             
-            // validate: {
-            //     notEmpty: {msg: "Le nom ne doit pas être vide."},
-            //     notNull: {msg: "Le nom est une propriété réquise."},
-            //     min: {
-            //         args: [2],
-            //         msg: `Le nom doit contenir au moins 2 caractères`
-            //     },
-            //     max: {
-            //         args: [20],
-            //         msg: `Le nom doit contenir au plus 20 caractères`
-            //     }
-            // }
+            validate: {
+                notEmpty: {msg: "Le nom ne doit pas être vide."},
+                notNull: {msg: "Le nom est une propriété réquise."},
+                min: {
+                    args: [2],
+                    msg: `Le nom doit contenir au moins 2 caractères`
+                },
+                max: {
+                    args: [20],
+                    msg: `Le nom doit contenir au plus 20 caractères`
+                }
+            }
         },
         prenom : {
             type: DataTypes.STRING(50), 

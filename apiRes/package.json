@@ -4,7 +4,7 @@
   "description": "Conception d'une application API Rest permettant de gérer des cotisation",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "author": "DJOBO-N'dri-Francois-Carêm",
   "license": "ISC",

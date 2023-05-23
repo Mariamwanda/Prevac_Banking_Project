@@ -17,9 +17,9 @@
 </head>
 <body>
     <div class="container">
-        <a href="http://localhost:3000/"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="/"><i class="fa-solid fa-arrow-left"></i></a>
         <h4 class="m-3">Informations Supplementaires</h4>
-        <form action="http://localhost:3000/api/engagement" method="post">
+        <form action="/api/engagement" method="post">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="input-group mb-3">
@@ -82,7 +82,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="tauxInteret">Taux d'interêt</label>
                         </div>
-                        <input type="text" class="form-control" id="tauxInteret" value= <%= conf[conf.length-1].interetContisation %> id="taux" aria-describedby="tauxInteret" disabled>
+                        <input type="number" class="form-control" id="tauxInteret" aria-describedby="tauxInteret" disabled value=<%= conf.interetContisation %>>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -90,7 +90,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="id_client ">Admin</label>
                         </div>
-                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value=<%=data[data.length-1].id %>>
+                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value=<%= admin.id %>>
                     </div>
                 </div>
             </div>
