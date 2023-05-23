@@ -1,0 +1,45 @@
+Validateur personnalisé cf vidéo 5:28:00
+validate: {
+    isTypesValid(value){
+        if(!value){
+            throw new Error("Un administrateur doit avoir qu'un seul type"); 
+        }
+        if(value.split(',').length > 3){
+            throw new Error("Un administrateur ne peut pas avoir plus de trois types."); 
+        }
+    }
+}
+
+QueryParams ou paramètre de réquette
+
+Pour installer le module de cryptage des mots de passe
+npm install bcrypt --save
+06:30:00
+
+Pour install le jetonwebtoken
+=> npm install jetonwebtoken --save
+
+On rétire le package morgan dans les devDependencies
+"devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "organ": "^0.0.0"
+  }
+
+
+
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "organ": "^0.0.0"
+  }
+
+
+"scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=development nodemon app.js"
+  },
+
+
+
+  <!-- <input type="text" class="form-control" id="tauxInteret" value= <%= conf[conf.length-1].interetContisation %>%*/ id="taux" aria-describedby="tauxInteret" disabled> -->
+  <!-- <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value=<%=data[data.length-1].id %>> -->

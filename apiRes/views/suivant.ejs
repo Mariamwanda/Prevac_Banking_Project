@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info_supple</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./../fonts/icomoon/style.css" type="text/css">
+    <link rel="stylesheet" href="./../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="./../css/bootstrap.min.css" type="text/css"/>
+    <!-- Style -->
+    <link rel="stylesheet" href="./../css/info_supple.css" type="text/css">
+    
+</head>
+<body>
+    <div class="container">
+        <a href="http://localhost:3000/"><i class="fa-solid fa-arrow-left"></i></a>
+        <h4 class="m-3">Informations Supplementaires</h4>
+        <form action="http://localhost:3000/api/engagement" method="post">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="periode">Periode Cotisation (Jours)</label>
+                        </div>
+                        <select class="custom-select" id="periode" name="periode" required>
+                            <option selected value="">Choisir...</option>
+                            <option>30</option>
+                            <option>15</option>
+                            <option>7</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="montant">Montant (FCFA / Jours)</label>
+                        </div>
+                        <select class="custom-select" id="montant" name="montant" required>
+                            <option selected value="">Choisir...</option>
+                            <option>10000</option>
+                            <option>15000</option>
+                            <option>20000</option>
+                            <option>30000</option>
+                            <option>50000</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="moyenPaiement">Moyen de paiement</label>
+                        </div>
+                        <select class="custom-select" id="moyenPaiement" name="moyenPaiement" required>
+                            <option selected value="">Choisir...</option>
+                            <option value="ORANGE MONEY">ORANGE MONEY</option>
+                            <option value="MTN MONEY">MTN MONEY</option>
+                            <option value="MOOV MONEY">MOOV MONEY</option>
+                            <option value="WAVE MONEY">WAVE MONEY</option>
+                            <option value="CARTE">CARTE BANCAIRE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="comptePaiement">Compte de paiement</label>
+                        </div>
+                        <input type="text" class="form-control" id="comptePaiement" aria-describedby="comptePaiement" name="comptePaiement" placeholder="Compte de paiement" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="tauxInteret">Taux d'interêt</label>
+                        </div>
+                        <input type="text" class="form-control" id="tauxInteret" value= <%= conf[conf.length-1].interetContisation %> id="taux" aria-describedby="tauxInteret" disabled>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="id_client ">Admin</label>
+                        </div>
+                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value=<%=data[data.length-1].id %>>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <button type="submit" class="btn btn-primary">Créer le compte</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<SCRipt>
+    
+</SCRipt>
+</html>
