@@ -109,34 +109,96 @@ h1{
   height: 60vh;
 }
 
+header{
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    background: rgb(222, 220, 220);
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+}
+
+.description span{
+  color: #19376D;
+}
+
+.description{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.description h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 3rem;
+}
+
+
+.description p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 17px;
+  color: #000;
+  font-family: sans-serif;
+}
+
+
+.imgL2 img{
+  margin:  0 auto;
+  transition: all 0.5s ease;
+  max-width: 750px;
+}
+
+.ligne1 :hover img{
+  transform: scale(1.1);
+}
+
+
+.monImg img{
+  margin:  0 auto;
+  transition: all 0.5s ease;
+  max-width: 750px;
+}
+
+.ligne2 :hover img{
+  transform: scale(1.1);
+}
+
+
 @media (max-width: 991.98px) {
-    .padding {
-      padding: 1.5rem;
-    }
+   
 
     .racine{
       display: inline-block;
       align-items: center;
+
     }
 
-.monBut button{
-  font-size: 10px;
+  .monBut button{
+    font-size: 10px;
 
-}
   }
-  @media (max-width: 767.98px) {
-   
-    #partieGauche{
-      left: 0;
-      right: 0;
     }
+    @media (max-width: 767.98px) {
+    
+      #partieGauche{
+        left: 0;
+        right: 0;
+      }
 
-.partieDroite{
-  font-size: 15px;
- 
+  .partieDroite{
+    font-size: 15px;
+  
+  }
+
 }
-
-    }
 
 
 
