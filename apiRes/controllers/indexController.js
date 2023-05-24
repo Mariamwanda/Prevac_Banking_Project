@@ -21,10 +21,7 @@ let conf = '';
 async function fetchConfigs(){
     const response = await fetch('http://localhost:3001/configurations');
     const cle = await response.json();
-    // interetContisation
     conf = cle.data[0]; 
-    // interetContisation
-    console.log("======================================================", conf)
 } 
 
 fetchConfigs();
@@ -62,12 +59,12 @@ class IndexController{
     }
 
     static createAdmin(req, res){
-
         req.body.reference = `IBANK-${genererChaineAleatoire().toUpperCase()}`;
         req.body.statut = 1;
         Admin.create(req.body)
         .then(admin => {
             // let message = `L'administrateur ${req.body.nom} ${req.body.prenom} a bien été crée.`;
+            console.log("==============================================================================", conf)
             res.render('suivant', {admin, conf})
             // res.json({ message, data: admin });
         })
@@ -223,14 +220,18 @@ class IndexController{
         req.body.reference = `IBANK-${genererChaineAleatoire().toUpperCase()}`;
         req.body.periode = parseInt(req.body.periode);
         req.body.montant = parseInt(req.body.montant);
-        req.body.id_client = parseInt(req.body.id_client);
+        req.body.moyen_paiement = req.body.moyen_paiement;
+        req.body.compte_paiement = req.body.compte_paiement;
         req.body.statut = 1;
+        console.log("req.body.id_client+++++++++++++++++++++++++++++++++++++++++++++++", req.body.id_client)
+        req.body.id_client = Number(req.body.id_client);
         
+        console.log("req.body.id_client+++++++++++++++++++++++++++++++++++++++++++++++", req.body.id_client)
         console.log("ENGAGEMENT+++++++++++++++++++++++++++++++++++++++++++++++", req.body)
        await Engagement.create(req.body)
         .then(engag => {
             console.log("+++++++++++++++++++++++++++++++++++++++++++++++", engag)
-            res.render('/');
+            res.render('');
             // let message = `L'administrateur ${req.body.nom} ${req.body.prenom} a bien été crée.`;
             // res.json({ message, data: admin });
         })

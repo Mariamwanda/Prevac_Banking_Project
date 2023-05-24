@@ -73,7 +73,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="compte_paiement">Compte de paiement</label>
                         </div>
-                        <!-- <input type="text" class="form-control" id="compte_paiement" aria-describedby="compte_paiement" name="compte_paiement" placeholder="Compte de paiement"> -->
+                        
                         <input type="text" class="form-control" id="compte_paiement" aria-describedby="compte_paiement" name="compte_paiement" placeholder="Compte de paiement" required>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="tauxInteret">Taux d'interêt</label>
                         </div>
-                        <input type="number" class="form-control" id="tauxInteret" aria-describedby="tauxInteret" disabled value=<%= conf.interetContisation %>>
+                        <input type="text" class="form-control" id="tauxInteret" aria-describedby="tauxInteret" disabled value="<%= conf.interetContisation %>"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -93,7 +93,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="id_client ">Admin</label>
                         </div>
-                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" disabled class="form-control" value=<%= admin.id %>>
+                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value="<%= Number(admin.id) %>"/>
                     </div>
                 </div>
             </div>
