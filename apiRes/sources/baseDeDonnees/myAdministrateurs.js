@@ -3,8 +3,8 @@ let myAdministrateurs = [
         id: 1,
         nom: "DJOBO",
         prenom: "N'dri François Carêm",
-        email: "nfcdjobo@gmail.com",
-        password: "root",
+        email: "user@gmail.com",
+        password: "user",
         url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
     },
     {
