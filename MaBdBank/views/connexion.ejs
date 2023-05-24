@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBank-SS | Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./../fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./../css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="./../css/bootstrap.min.css" />
+    <!-- Style -->
+    <link rel="stylesheet" href="./../css/connexion.css">
+    
+</head>
+<body>
+  
+    <section>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="row g-0">
+                <div class="col-md-6 col-lg-5  d-md-block">
+                  <img src="./../images/istockphoto-3.jpeg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                </div>
+               <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-12 text-black">
+                    <form action="/api/login/admin" method="post">
+                      <a href="/">
+                        <div class="d-flex align-items-center mb-1 pb-1">
+                          <i class="fas fa-cubes fa-2x me-1" style="color: #ff6219;"></i>
+                          <span class="h1 fw-bold mb-3"> Ibank Signe-Signe</span>
+                        </div>
+                      </a>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="email">Email</span>
+                            <input type="email" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="email" placeholder="Email" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="password">Password</span>
+                            <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="password" placeholder="Password" required>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="input-group mb-3">
+                            <button type="submit" class="btn btn-primary">Valider</button>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <input class="form-check-input" id="remember" type="checkbox">
+                          <label class="form-check-label" for="remember"> Souviens-toi de moi</label>
+                        </div>
+                      </div>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                        Vous n'avez pas de compte ? <a href="http://localhost:3001/inscription"
+                        style="color: #393f81;"> Inscrivez-vous ici.</a></p>
+                    </form>
+                  </div>
+               </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="./../JS/jquery-3.3.1.min.js"></script>
+      <script src="./../JS/popper.min.js"></script>
+      <script src="./../JS/bootstrap.min.js"></script>
+      <script src="./../JS/jquery.sticky.js"></script>
+      <script src="./../JS/main.js"></script>
+</body>
+</html>

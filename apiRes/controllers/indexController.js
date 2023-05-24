@@ -4,7 +4,7 @@ let { Configuration } = require('./../sources/baseDeDonnees/sequelize');
 let { Engagement } = require('./../sources/baseDeDonnees/sequelize');
 let auth = require('./../sources/auth/auth');
 // let http = require("http");
-let { ValidationError, UniqueConstraintError, Op } = require('sequelize');
+let { ValidationError, UniqueConstraintError, Op, QueryTypes } = require('sequelize');
 
 // Permet de générer des codes de références aléatoires
 function genererChaineAleatoire(){
@@ -65,11 +65,6 @@ class IndexController{
 
         req.body.reference = `IBANK-${genererChaineAleatoire().toUpperCase()}`;
         req.body.statut = 1;
-        // req.body.nom = req.params.nom; 
-        // req.body.prenom = req.params.prenom;
-        // req.body.email = req.params.email;
-        // req.body.telephone = req.params.telephone;
-        // req.body.password = req.params.password;
         Admin.create(req.body)
         .then(admin => {
             // let message = `L'administrateur ${req.body.nom} ${req.body.prenom} a bien été crée.`;
@@ -224,15 +219,15 @@ class IndexController{
         }
     }
 
-    static engagement(req, res){
+    static async createEngagement(req, res){
         req.body.reference = `IBANK-${genererChaineAleatoire().toUpperCase()}`;
         req.body.periode = parseInt(req.body.periode);
         req.body.montant = parseInt(req.body.montant);
         req.body.id_client = parseInt(req.body.id_client);
         req.body.statut = 1;
-        console.log("+++++++++++++++++++++++++++++++++++++++++++++++",req)
-        console.log("+++++++++++++++++++++++++++++++++++++++++++++++", req.body)
-        Engagement.create(req.body)
+        
+        console.log("ENGAGEMENT+++++++++++++++++++++++++++++++++++++++++++++++", req.body)
+       await Engagement.create(req.body)
         .then(engag => {
             console.log("+++++++++++++++++++++++++++++++++++++++++++++++", engag)
             res.render('/');

@@ -17,6 +17,7 @@ Route.get('/configurations', IndexController.configuration);
 Route.post('/inscription', IndexController.createAdmin);
 Route.get('/getAllAdmin', IndexController.getAllAdmin);
 
-Route.post('/engagement', IndexController.engagement);
+Route.post('/saveEngagement', IndexController.createEngagement);
+
 
 module.exports = Route;

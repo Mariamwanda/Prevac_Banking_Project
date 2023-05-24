@@ -3,6 +3,9 @@ const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const browserify = require('browserify');
+// const sequelizeCli = require('sequelize-cli')
+const mysql2 = require('mysql2')
+
 // const testRouter =  require('./sources/routes/route')
 const indexRoute = require('./routes')
 
@@ -107,3 +110,4 @@ app.use(({res}) => {
 });
 
 app.listen(port, () => console.log(`Votre application Node est démarrée sur le port: http://localhost:${port}`));
+    
