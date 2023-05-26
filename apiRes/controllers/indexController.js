@@ -22,14 +22,14 @@ function genererChaineAleatoire(){
     return chaineAleatoire;
 }
 
-let conf = '';
-async function fetchConfigs(){
-    const res = await fetch('http://localhost:3001/configurations');
-    const cle = await res.json();
-    conf = cle.data[0]; 
-} 
-
-fetchConfigs();
+// let conf = '';
+// async function fetchConfigs(){
+//     const res = await fetch('http://localhost:30000/configurations');
+//     const cle = await res.json();
+//     conf = cle.data[0]; 
+// } 
+// 
+// fetchConfigs();
 
 
 
@@ -315,15 +315,17 @@ class IndexController {
           Solde.findOne({where:{reference: admin.dataValues.reference}}).then(key=>{
             const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
             // La date du jour
-            let dateAujourdhui = new Date(key.created_at);
+            let dateAujourdhui = new Date(inf.created_at);
+            console.log("###########################################################################################################", dateAujourdhui)
 
             let option = {weekday: "long"};
             let jourActuel = dateAujourdhui.toLocaleDateString("fr-FR", option);
             jourActuel = jourActuel.charAt(0).toLocaleUpperCase()+jourActuel.slice(1);
             let tableauJourOrdonnes = jours.slice(jours.indexOf(jourActuel)).concat(jours.slice(0, jours.indexOf(jourActuel)));
-            let compteur = 0
+            let compteur = 0;
+            
             console.log("=====================================================================================================================", typeof(key.periode), key.periode, key)
-            res.render("espaceUser", { message, data: admin, token, session : req.session, inf, key, tableauJourOrdonnes, compteur })
+            res.render("espaceUser", { message, data: admin, token, session : req.session, inf, key, tableauJourOrdonnes, compteur, dateAujourdhui })
           })
         })
       })

@@ -16,7 +16,7 @@ const path = require('path');
 const sequelize = require("./sources/baseDeDonnees/sequelize");
 
 const app = express();
-let port = process.env.PORT || 3001;
+let port = process.env.PORT || 30000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded(
     { extended: false})

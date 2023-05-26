@@ -24,16 +24,16 @@ let myMessageries = require('./myMessageries');
 let myTransactions = require('./myTransactions');
   
 let sequelize = new Sequelize(
-    // 'sql8619055',
-    // 'sql8619055',
-    // '1ygfjF7DIw',
-    'ibank_signe',
-    'root',
-    '',
+    'sql8619055',
+    'sql8619055',
+    '1ygfjF7DIw',
+    // 'ibank_signe',
+    // 'root',
+    // '',
     {
-        host: 'localhost',
-        // host: 'sql8.freesqldatabase.com',
-        // port: 3306,
+        // host: 'localhost',
+        host: 'sql8.freesqldatabase.com',
+        port: 3306,
         dialect:  'mariadb',
         dialectOptions: {
             timeZone: 'Etc/GMT-2'

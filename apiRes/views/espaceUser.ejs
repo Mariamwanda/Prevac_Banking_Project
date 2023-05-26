@@ -42,14 +42,14 @@
         </div>
       <div class="calender-payment row my-lg-5">
               <div class="col col-sm-12 col-md-6 col-lg-6 calendier shadow-lg">
-                <div class="text-center font-weight-bolder">Debut: <span class="font-weight-bolder debut"><%= data.created_at.getDay() %> / <%= data.created_at.getMonth() %> / <%= data.created_at.getFullYear() %></span></div>
+                <div class="text-center font-weight-bolder">Debut: <span class="font-weight-bolder debut"><%= data.created_at.getDate() %> / <%= data.created_at.getMonth() %> / <%= data.created_at.getFullYear() %></span></div>
                 <div class="container d-flex flex-wrap">
                     <% for(let i = 0; i<= Number(inf.periode); i++){ %>
                         <div class="date1 m-sm-1">
-                            
+                            <% dateAujourdhui= (new Date(dateAujourdhui) + inf.periode*i*60*60*1000) %>
                             <span><%= tableauJourOrdonnes[compteur].slice(0, 3) %></span>
                             <% if(compteur >= (tableauJourOrdonnes.length-1) || i == inf.periode){ compteur = 0}else{ compteur=compteur+1} %>
-                            <span>lorm</span>
+                            <span><%= new Date(dateAujourdhui).getDate() %>/<%= new Date(dateAujourdhui).getMonth()+1 %>/<%= new Date(dateAujourdhui).getFullYear() %></span>
                             
                         </div>
                     <%} %>
