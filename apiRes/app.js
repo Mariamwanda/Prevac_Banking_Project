@@ -4,7 +4,9 @@ const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const browserify = require('browserify');
 // const sequelizeCli = require('sequelize-cli')
+
 const mysql2 = require('mysql2')
+const session = require('express-session');
 
 // const testRouter =  require('./sources/routes/route')
 const indexRoute = require('./routes')
@@ -35,7 +37,13 @@ app.use((request, response, next) => {
     response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next()
-});
+})
+
+.use(session({
+  secret : 'webslesson',
+  resave : true,
+  saveUninitialized : true
+}));
 
 
 sequelize.initBaseDeDonnees();
@@ -44,8 +52,9 @@ app.use(indexRoute);
 
 // La gestion des erreurs de type 404 (Page no fond)
 app.use(({res}) => {
-    let message = 'Impossible de trouver la ressource demandée ! Veuillez donc s\'il-vous-plaît essayer la bonne url (lien) !';
-    res.status(500).json({message});
+    // let message = 'Impossible de trouver la ressource demandée ! Veuillez donc s\'il-vous-plaît essayer la bonne url (lien) !';
+    res.render('')
+    // res.status(500).json({message});
 });
 
 app.listen(port, () => console.log(`Votre application Node est démarrée sur le port: http://localhost:${port}`));

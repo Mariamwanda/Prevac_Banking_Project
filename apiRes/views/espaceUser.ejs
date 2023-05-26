@@ -19,169 +19,41 @@
 <!-- Style -->
 <link rel="stylesheet" href="/css/espace-user.css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <title>Espace-Users</title>
+  <title>IBank | Espace-Users</title>
 
 </head>
 <body>
     <!----------------------------------- Users Espace ------------------------------------------->
     <div class="container pt-4">
-      <div class="profile">
-              <div class="info-user d-flex">
-                      <div class="logo">
-                          <i class="far fa-circle-user fa-4x mr-lg-1"></i>
-                      </div>
-                      <div class="nomeUser">
-                          <h2>Diara Madou</h2>
-                          <p>couda.dm@gmail.com</p>
-                      </div>
-              </div>
-              <div class="btn profile" style="background-color: var(--primaryColor)">
-                  <a class="nav-link" href="/profile" target="_blank">Profile</a>
-              </div>
-      </div>
+        <div class="profile">
+            <div class="info-user d-flex">
+                    <div class="logo">
+                        <i class="far fa-circle-user fa-4x mr-lg-1"></i>
+                    </div>
+                    <div class="nomeUser">
+                        <h6><%= session.user_nom %></h6>
+                        <h6><%= session.user_prenom %></h6>
+                        <p><%= session.user_email %></p>
+                    </div>
+            </div>
+            <div class="btn profile" style="background-color: var(--primaryColor)">
+                <a class="nav-link" href="/profile" target="_blank">Profile</a>
+            </div>
+        </div>
       <div class="calender-payment row my-lg-5">
               <div class="col col-sm-12 col-md-6 col-lg-6 calendier shadow-lg">
-                  <div class="text-center font-weight-bolder">Debut: <span class="font-weight-bolder debut">10/12/2023</span></div>
-                  <div class="container d-flex flex-wrap">
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                          
-                          <div class="date1 m-sm-1">
-                              <span>lorm</span>
-                              <span>lorm</span>
-                          </div>
-                          
-                  </div>
+                <div class="text-center font-weight-bolder">Debut: <span class="font-weight-bolder debut"><%= data.created_at.getDay() %> / <%= data.created_at.getMonth() %> / <%= data.created_at.getFullYear() %></span></div>
+                <div class="container d-flex flex-wrap">
+                    <% for(let i = 0; i<= Number(inf.periode); i++){ %>
+                        <div class="date1 m-sm-1">
+                            
+                            <span><%= tableauJourOrdonnes[compteur].slice(0, 3) %></span>
+                            <% if(compteur >= (tableauJourOrdonnes.length-1) || i == inf.periode){ compteur = 0}else{ compteur=compteur+1} %>
+                            <span>lorm</span>
+                            
+                        </div>
+                    <%} %>
+                </div>
               </div>
               <div class="col col-sm-12 col-md-6 col-lg-6 payement">
                   <div class="money d-flex container">                            
@@ -209,16 +81,20 @@
                         </form>
                   </div>
               </div>
-      </div>
+        </div>
+        
       <div class="quitter container row">
 
             <div class="col-md-6 col-lg-6 col sm-6">
-                    <h2>Solde Cotisation:  <span>50000</span> FCFA</h2>
+                    <h2>Solde Cotisation:  <span><%= key.montant %> FCFA</span></h2>
             </div>  
-
-            <div class="col-md-6 col-lg-6 col sm-6 d-flex justify-content-end">
-               <a href="/connexion"><button class="btn btn-danger">Quitter</button></a> 
-            </div>  
+            <% if(session.user_email) { %>
+                <div class="col-md-6 col-lg-6 col sm-6 d-flex justify-content-end">
+                    <a href="/deconnexion"><button class="btn btn-danger">Déconnexion</button></a> 
+                </div
+                
+            <% } else { location.href='/'%>  <% } %>
+           
       </div>
 
   

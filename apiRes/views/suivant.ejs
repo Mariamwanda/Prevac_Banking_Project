@@ -19,7 +19,7 @@
     <div class="container">
         <a href="/"><i class="fa-solid fa-arrow-left"></i></a>
         <h4 class="m-3">Informations Supplementaires</h4>
-        <form action="/espaceUser" method="post">
+        <form action="/connexion" method="post">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="input-group mb-3">
@@ -85,15 +85,18 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="tauxInteret">Taux d'interêt</label>
                         </div>
-                        <input type="text" class="form-control" id="tauxInteret" aria-describedby="tauxInteret" disabled value="<%= conf.interetContisation %>"/>
+                        <input type="text" class="form-control" id="tauxInteret" aria-describedby="tauxInteret" disabled value="<%= conf.interetContisation %>%"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="id_client ">Admin</label>
-                        </div>
-                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value="<%= Number(admin.id) %>"/>
+                        <input type="text" name="id_client"  id="id_client" aria-describedby="id_client" class="form-control" value="<%= Number(admin.id) %>" hidden/>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="reference" aria-describedby="reference" name="reference" value="<%= conf.reference %>" hidden/>
                     </div>
                 </div>
             </div>

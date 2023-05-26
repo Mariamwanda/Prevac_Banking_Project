@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             unique: true
         },
-         
         montant: {
             type: DataTypes.INTEGER, 
             allowNull: false
@@ -22,13 +21,14 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         // Set FK relationship (hasMany) with `Trainer`
+        
         id_client: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: clients(sequelize, DataTypes), 
-                key: 'id'
-            }
+            allowNull: false
+            // references: {
+            //     model: clients(sequelize, DataTypes), 
+            //     key: 'id'
+            // }
         }
     },
     {

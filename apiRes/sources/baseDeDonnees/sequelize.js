@@ -73,7 +73,6 @@ let initBaseDeDonnees = async () => {
   const _ = await sequelize.sync({ force: true });
     console.log("La base de données <ibank_signe> a bien été synchronisée.");
     myAdministrateurs.map(admins => {
-        console.log('ADMINISTRATEUR+++++++++++++++++++++++++++++++++++', admins)
         bcrypt.hash(admins.password, 10)
         .then(hash => {
             Admin.create({
@@ -89,11 +88,7 @@ let initBaseDeDonnees = async () => {
         }) 
     });
 
-    
-
-
     myClients.map(client => {
-        console.log('CLIENT+++++++++++++++++++++++++++++++++++', client)
         bcrypt.hash(client.password, 10)
         .then(hash => {
              Client.create({
@@ -110,7 +105,6 @@ let initBaseDeDonnees = async () => {
     })
 
     myEngagements.map(engag => {
-        console.log('ENGAGEMENT+++++++++++++++++++++++++++++++++++', engag)
         Engagement.create({
             reference: `IBANK-${genererChaineAleatoire(caract, 25).toUpperCase()}`,
             periode: Number(engag.periode),
@@ -124,7 +118,6 @@ let initBaseDeDonnees = async () => {
     });
 
     myConfigurations.map(config => {
-        console.log('CONFIGURATION+++++++++++++++++++++++++++++++++++', config)
         Configuration.create({
             reference: `IBANK-${genererChaineAleatoire(caract, 25).toUpperCase()}`,
             raisonSociale: config.raisonSociale,
@@ -167,5 +160,5 @@ aaa[0]
 //     }
 // }, 4000)
 module.exports =  { 
-  initBaseDeDonnees, Admin, Client, Configuration, Solde, ComptePret, Cotisation, Retrait, Engagement, aaa
+  initBaseDeDonnees, Admin, Client, Configuration, Solde, ComptePret, Cotisation, Retrait, Engagement, aaa, sequelize
 }

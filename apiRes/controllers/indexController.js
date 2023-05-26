@@ -3,12 +3,13 @@ let { Admin } = require('./../sources/baseDeDonnees/sequelize');
 let { Solde } = require('./../sources/baseDeDonnees/sequelize');
 let { Configuration } = require('./../sources/baseDeDonnees/sequelize');
 let { Engagement } = require('./../sources/baseDeDonnees/sequelize');
+let { sequelize } = require('./../sources/baseDeDonnees/sequelize');
 let auth = require('./../sources/auth/auth');
 let jwt = require('jsonwebtoken');
 let privateKey = require('./../sources/auth/private_key');
 
 // let http = require("http");
-let { ValidationError, UniqueConstraintError, Op, QueryTypes } = require('sequelize');
+let { ValidationError, UniqueConstraintError, Op, QueryTypes, json } = require('sequelize'); 
 
 // Permet de générer des codes de références aléatoires
 function genererChaineAleatoire(){
@@ -23,8 +24,8 @@ function genererChaineAleatoire(){
 
 let conf = '';
 async function fetchConfigs(){
-    const response = await fetch('http://localhost:3001/configurations');
-    const cle = await response.json();
+    const res = await fetch('http://localhost:3001/configurations');
+    const cle = await res.json();
     conf = cle.data[0]; 
 } 
 
@@ -39,7 +40,7 @@ class IndexController {
   }
   // Rédirection vers la page d'accueil
   static accueil(req, res) {
-    res.render("index");
+    res.render("index", { title: 'Express', session : req.session } );
   }
   // Rédirection vers la page de contact
   static contact(req, res) {
@@ -81,7 +82,10 @@ class IndexController {
       Admin.create(req.body)
       .then((admin) => {
         // let message = `L'administrateur ${req.body.nom} ${req.body.prenom} a bien été crée.`;
-        res.render("suivant", { admin, conf });
+        Configuration.findOne({where: {id:1}}).then(conf=>{
+          res.render("suivant", { admin, conf });
+        })
+        
         // res.json({ message, data: admin });
       })
       .catch((error) => {
@@ -94,7 +98,6 @@ class IndexController {
         let message = `L'administrateur n'a pas pu être ajouter. Veuillez donc réessayer dans quelques instants.`;
         res.status(500).json({ message, data: error });
       });
-
     })
     
   }
@@ -103,8 +106,7 @@ class IndexController {
     Admin.findByPk(req.params.id) // On récupère d'abord le sujet avant de le supprimer
       .then((admin) => {
         if (admin === null) {
-          let message =
-            "L'administrateur n'a pas été trouvé. Veuillez donc réessayer avec un autre identifiant.";
+          let message = "L'administrateur n'a pas été trouvé. Veuillez donc réessayer avec un autre identifiant.";
           return res.status(404).json({ message });
         }
         let adminDeleted = admin;
@@ -176,7 +178,7 @@ class IndexController {
       Admin.findAll({ order: ["nom"] }) // On récupère tous nos administrateur présent dans la base de données grâce à la méthode findAll(), cette méthode retourne une promesse
         .then((admin) => {
           let message = "La liste des administrateurs a bien été récupérée.";
-          res.json({ message, data: admin }); // On retourne directement notre réponse à l'intérieur de la méthode response.json() fournit par Express
+          res.json({ message, data: admin }); // On retourne directement notre réponse à l'intérieur de la méthode res.json() fournit par Express
         })
         .catch((error) => {
           let message = `La liste n'a pas pu être récupérer. Veuillez donc réessayer dans quelques instants.`;
@@ -233,7 +235,7 @@ class IndexController {
       Configuration.findAll({ order: ["raisonSociale"] }) // On récupère tous nos administrateur présent dans la base de données grâce à la méthode findAll(), cette méthode retourne une promesse
         .then((config) => {
           let message = "La liste des administrateurs a bien été récupérée.";
-          res.json({ message, data: config }); // On retourne directement notre réponse à l'intérieur de la méthode response.json() fournit par Express
+          res.json({ message, data: config }); // On retourne directement notre réponse à l'intérieur de la méthode res.json() fournit par Express
         })
         .catch((error) => {
           let message = `La liste n'a pas pu être récupérer. Veuillez donc réessayer dans quelques instants.`;
@@ -243,7 +245,10 @@ class IndexController {
   }
 
   static async createEngagement(req, res) {
-    req.body.reference = `IBANK-${genererChaineAleatoire().toUpperCase()}`;
+    let add = await Admin.findOne({where:{id: req.body.id_client}});
+    req.body.reference = add.reference;
+    // console.log('ADD============================================================', add);
+    // console.log('reference============================================================', req.body.reference);
     req.body.periode = parseInt(req.body.periode);
     req.body.montant = parseInt(req.body.montant);
     req.body.moyen_paiement = req.body.moyen_paiement;
@@ -251,7 +256,8 @@ class IndexController {
     req.body.statut = 1;
     req.body.montant =  parseInt(req.body.montant);
     req.body.id_client = Number(req.body.id_client);
-
+    // console.log('reference============================================================', req.body.reference);
+    console.log('all============================================================', req.body);
     await Engagement.create(req.body)
       .then((engag) => {
         res.render("connexion");
@@ -273,12 +279,12 @@ class IndexController {
         res.render("suivant", { message });
         // res.status(500).json({ message, data: error });
       });
+      Solde.create(req.body)
   }
 
   // Connexion
   static authentification(req, res){
     Admin.findOne({ where: { email: req.body.email } }).then(admin => {
-      console.log(admin)
       if(! admin){
         const message = "Ce compte n'existe pas."
         res.render("connexion", { message})
@@ -290,16 +296,36 @@ class IndexController {
           res.render("connexion", { message})
           // return res.status(400).json({ message })
         }
-
         // Jsonwebtoken (jeton)
         let token = jwt.sign( // On génère le jeton jwt avec la méthode sign() du modue jsonwebtoken
-          {id_admin: admin.id},
+          {id_admin: admin.id, email_admin: admin.email},
           privateKey,
           {expiresIn: '24h'}
         )
         const message = `La connexion a été connecté avec succès`;
         // return res.json({ message, data: admin, token })
-        res.render("espaceUser", { message, data: admin, token })
+        
+        req.session.user_id = admin.dataValues.id;
+        req.session.user_reference = admin.dataValues.reference;
+        req.session.user_email = admin.dataValues.email;
+        req.session.user_password = admin.dataValues.password;
+        req.session.user_nom = admin.dataValues.nom;
+        req.session.user_prenom = admin.dataValues.prenom 
+        Engagement.findOne({where:{reference: admin.dataValues.reference}}).then(inf=>{
+          Solde.findOne({where:{reference: admin.dataValues.reference}}).then(key=>{
+            const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+            // La date du jour
+            let dateAujourdhui = new Date(key.created_at);
+
+            let option = {weekday: "long"};
+            let jourActuel = dateAujourdhui.toLocaleDateString("fr-FR", option);
+            jourActuel = jourActuel.charAt(0).toLocaleUpperCase()+jourActuel.slice(1);
+            let tableauJourOrdonnes = jours.slice(jours.indexOf(jourActuel)).concat(jours.slice(0, jours.indexOf(jourActuel)));
+            let compteur = 0
+            console.log("=====================================================================================================================", typeof(key.periode), key.periode, key)
+            res.render("espaceUser", { message, data: admin, token, session : req.session, inf, key, tableauJourOrdonnes, compteur })
+          })
+        })
       })
     })
     .catch(error => {
@@ -308,6 +334,22 @@ class IndexController {
       // return res.json({message})
     })
   }
+  static deconnexion(request, response, next){
+    request.session.destroy();
+    response.render("connexion");
+  }
 }
+// function calendier(debuit, duree){
+//   // Les jours de la semaine
+//   const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+//   // La date du jour
+//   let dateAujourdhui = new Date(debuit);
+//   let dateFin =dateAujourdhui+duree*24*60*60*1000;
+//   let option = {weekday: "long"};
+//   let jourActuel = dateAujourdhui.toLocaleDateString("fr-FR", option);
+//   jourActuel = jourActuel.charAt(0).toLocaleUpperCase()+jourActuel.slice(1);
+//   let tableauJourOrdonnes = jours.slice(jours.indexOf(jourActuel)).concat(jours.slice(0, jours.indexOf(jourActuel)));
+//   return tableauJourOrdonnes;
+// }
 
 module.exports = IndexController;
